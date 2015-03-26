@@ -50,6 +50,8 @@ public class AddClientes extends javax.swing.JInternalFrame {
         resetarCliente = new javax.swing.JToggleButton();
 
         setClosable(true);
+        setMaximizable(true);
+        setResizable(true);
         setTitle("Adicionar Cliente");
 
         lblCNPJ.setText("CNPJ/CPF:");

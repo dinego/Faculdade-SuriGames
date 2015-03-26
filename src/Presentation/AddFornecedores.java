@@ -5,6 +5,10 @@
  */
 package Presentation;
 
+import Entity.Fornecedor;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Diego
@@ -67,6 +71,11 @@ public class AddFornecedores extends javax.swing.JInternalFrame {
         lblTelefone.setText("Telefone:");
 
         cadastrarCliente.setText("Cadastrar Fornecedor");
+        cadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarClienteActionPerformed(evt);
+            }
+        });
 
         lblNomeContato.setText("Nome Contato:");
 
@@ -174,6 +183,120 @@ public class AddFornecedores extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumeroActionPerformed
 
+    private void cadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarClienteActionPerformed
+        validaCamposPreenchidos();
+    }//GEN-LAST:event_cadastrarClienteActionPerformed
+
+    private void cadastraCampos() {
+       //criando objeto fornecedor
+        Fornecedor fornecedor  = new Fornecedor();
+        
+        //pegando valores dos inputs e atribuindo ao objeto fornecedor
+        String addNome = txtRazaoSocial.getText();
+        fornecedor.setNomeRazao(addNome);
+        
+        String addNomeContato = txtNomeContato.getText();
+        fornecedor.setNomeContato(addNome);
+        
+        String addTelefone = txtTelefone.getText();
+        fornecedor.setTelefone(addTelefone);
+        
+        String addEmail = txtEmailContato.getText();
+        fornecedor.setEmailContato(addEmail);
+        
+        String addEndereco = txtEndereco.getText();
+        fornecedor.setEndereco(addEndereco);
+        
+        int addNumero = Integer.parseInt(txtNumero.getText());
+        fornecedor.setNum(addNumero);
+        
+        String addUF = txtUF.getText();
+        fornecedor.setUF(addUF);
+        
+        String addCPFCNPJ = txtCNPJ.getText();
+        fornecedor.setCpfCNPJ(addCPFCNPJ);
+        
+        fornecedor.InserirDados(fornecedor);
+    }
+    
+    public void validaCamposPreenchidos() {  
+       int j;
+       if (txtRazaoSocial.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo Razão Social", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtRazaoSocial.setBackground(Color.RED);  
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtRazaoSocial.requestFocus();
+           }
+       } else if (txtNomeContato.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo NOME", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtNomeContato.setBackground(Color.RED);  
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtNomeContato.requestFocus();
+           }
+       } else if (txtTelefone.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo Telefone", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtTelefone.setBackground(Color.RED);  
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtTelefone.requestFocus();
+           }
+       } else if (txtEmailContato.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo Email Contato", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtEmailContato.setBackground(Color.RED);  
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtEmailContato.requestFocus();
+           }
+       } else if (txtEndereco.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo Endereço", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtEndereco.setBackground(Color.RED);  
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtEndereco.requestFocus();
+           }
+       } else if (txtNumero.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo Número", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtNumero.setBackground(Color.RED);  
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtNumero.requestFocus();
+           }
+       } else if (txtUF.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo UF", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtUF.setBackground(Color.RED);
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtUF.requestFocus();
+           }
+       } else if (txtCNPJ.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo CNPJ/CPF", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtCNPJ.setBackground(Color.RED);
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtCNPJ.requestFocus();
+           }
+       } else {  
+            cadastraCampos();
+       }  
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cadastrarCliente;
