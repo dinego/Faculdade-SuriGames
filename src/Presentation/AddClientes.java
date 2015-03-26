@@ -3,7 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package clientes;
+package Presentation;
+
+import Entity.Cliente;
+import Entity.Cliente;
+import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -173,33 +178,80 @@ public class AddClientes extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumeroActionPerformed
 
+    //ação do botão "cadastrar cliente"
     private void cadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarClienteActionPerformed
-        Clientes cliente  = new Clientes();
-        
-        String addNome = txtNomeContato.getText();
-        cliente.setNomeRazao(addNome);
-        
-        int addTelefone = Integer.parseInt(txtTelefone.getText());
-        cliente.setTelefone(addTelefone);
-        
-        String addEmail = txtEmailContato.getText();
-        cliente.setEmail(addEmail);
-        
-        String addEndereco = txtEndereco.getText();
-        cliente.setEndereco(addEndereco);
-        
-        int addNumero = Integer.parseInt(txtNumero.getText());
-        cliente.setNum(addNumero);
-        
-        String addUF = txtUF.getText();
-        cliente.setUF(addUF);
-        
-        String addCPFCNPJ = txtCNPJ.getText();
-        cliente.setCpfCNPJ(addCPFCNPJ);
-        
-        cliente.InserirDados(cliente);
+        validaCamposPreenchidos();
     }//GEN-LAST:event_cadastrarClienteActionPerformed
 
+    public void validaCamposPreenchidos() {  
+       int j;
+       if (txtNomeContato.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo NOME", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtNomeContato.setBackground(Color.RED);  
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtNomeContato.requestFocus();
+           }
+       } else if (txtTelefone.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo Telefone", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtTelefone.setBackground(Color.RED);  
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtTelefone.requestFocus();
+           }
+       } else if (txtEmailContato.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo Email Contato", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtEmailContato.setBackground(Color.RED);  
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtEmailContato.requestFocus();
+           }
+       } else if (txtEndereco.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo Endereço", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtEndereco.setBackground(Color.RED);  
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtEndereco.requestFocus();
+           }
+       } else if (txtNumero.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo Número", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtNumero.setBackground(Color.RED);  
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtNumero.requestFocus();
+           }
+       } else if (txtUF.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo UF", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtUF.setBackground(Color.RED);
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtUF.requestFocus();
+           }
+       } else if (txtCNPJ.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo CNPJ/CPF", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               txtCNPJ.setBackground(Color.RED);
+               //jTabbedPane1.setSelectedIndex(1);  
+               txtCNPJ.requestFocus();
+           }
+       } else {  
+            cadastraCampos();
+       }  
+    }
     /**
      * @param args the command line arguments
      */
@@ -229,6 +281,7 @@ public class AddClientes extends javax.swing.JInternalFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new AddClientes().setVisible(true);
             }
@@ -253,4 +306,33 @@ public class AddClientes extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtTelefone;
     private javax.swing.JTextField txtUF;
     // End of variables declaration//GEN-END:variables
+
+    private void cadastraCampos() {
+       //criando objeto cliente
+        Cliente cliente  = new Cliente();
+        
+        //pegando valores dos inputs e atribuindo ao objeto cliente
+        String addNome = txtNomeContato.getText();
+        cliente.setNomeRazao(addNome);
+        
+        String addTelefone = txtTelefone.getText();
+        cliente.setTelefone(addTelefone);
+        
+        String addEmail = txtEmailContato.getText();
+        cliente.setEmail(addEmail);
+        
+        String addEndereco = txtEndereco.getText();
+        cliente.setEndereco(addEndereco);
+        
+        int addNumero = Integer.parseInt(txtNumero.getText());
+        cliente.setNum(addNumero);
+        
+        String addUF = txtUF.getText();
+        cliente.setUF(addUF);
+        
+        String addCPFCNPJ = txtCNPJ.getText();
+        cliente.setCpfCNPJ(addCPFCNPJ);
+        
+        cliente.InserirDados(cliente);
+    }
 }

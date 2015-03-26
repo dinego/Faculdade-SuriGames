@@ -3,20 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package clientes;
+package Entity;
+
+import DAO.ClienteDAO;
 
 /**
  *
  * @author Diego Moreira
  */
-public class Clientes {
+public class Cliente {
     
     private String nomeRazao;
     private String endereco;
     private int num;
     private String UF;
     private String cpfCNPJ;
-    private int telefone;
+    private String telefone;
     private String email;
 
     public String getNomeRazao() {
@@ -59,11 +61,11 @@ public class Clientes {
         this.cpfCNPJ = cpfCNPJ;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -75,7 +77,8 @@ public class Clientes {
         this.email = email;
     }
     
-    public void InserirDados(Clientes c) {
-        
+    public void InserirDados(Cliente c) {
+        ClienteDAO add = new ClienteDAO();
+        add.inserir(c);
     }
 }

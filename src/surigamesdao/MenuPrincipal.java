@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package menu;
+package surigamesdao;
 
-import clientes.AddClientes;
-import clientes.ListarClientes;
-import fornecedores.AddFornecedores;
-import fornecedores.ListarFornecedores;
+import Presentation.AddClientes;
+import Presentation.ListarClientes;
+import Presentation.AddFornecedores;
+import Presentation.ListarFornecedores;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JInternalFrame;
-import jogos.AddJogos;
-import jogos.ListarJogos;
+import Presentation.AddJogos;
+import Presentation.ListarJogos;
 
 /**
  *

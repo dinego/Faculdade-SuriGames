@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jogos;
+package Presentation;
 
 /**
  *
  * @author Diego
  */
-public class ListarJogos extends javax.swing.JInternalFrame {
+public class AddJogos extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form ListarJogos
+     * Creates new form AddJogos
      */
-    public ListarJogos() {
+    public AddJogos() {
         initComponents();
     }
 
@@ -31,11 +31,11 @@ public class ListarJogos extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 619, Short.MAX_VALUE)
+            .addGap(0, 616, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 348, Short.MAX_VALUE)
+            .addGap(0, 363, Short.MAX_VALUE)
         );
 
         pack();
