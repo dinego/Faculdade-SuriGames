@@ -6,7 +6,7 @@
 package surigamesdao;
 
 import Presentation.AddClientes;
-import Presentation.ListarClientes;
+import Presentation.ListClientes;
 import Presentation.AddFornecedores;
 import Presentation.ListarFornecedores;
 import java.beans.PropertyVetoException;
@@ -172,7 +172,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnAddClientesActionPerformed
 
     private void BtnListarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnListarClientesActionPerformed
-        ListarClientes listarClientes = new ListarClientes();
+        ListClientes listarClientes = new ListClientes();
         PanelPrincipal.add(listarClientes);
         listarClientes.setVisible(true);
         setMaximumSize(listarClientes);

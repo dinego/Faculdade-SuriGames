@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  *
  * @author binho
  */
-public class FornecedorDAO {
+public class JogosDAO {
 
     private Connection con;
 

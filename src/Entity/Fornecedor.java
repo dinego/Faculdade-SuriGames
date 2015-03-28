@@ -5,7 +5,7 @@
  */
 package Entity;
 
-import DAO.FornecedorDAO;
+import DAO.JogosDAO;
 
 /**
  *
@@ -86,7 +86,7 @@ public class Fornecedor {
     }
     
     public void InserirDados(Fornecedor f) {
-        FornecedorDAO add = new FornecedorDAO();
+        JogosDAO add = new JogosDAO();
         add.inserir(f);
     }
 }

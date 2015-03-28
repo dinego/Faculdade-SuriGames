@@ -6,6 +6,7 @@
 package DAO;
 
 import Entity.Cliente;
+import java.awt.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -50,7 +51,70 @@ public class ClienteDAO {
 
         }
     }
+    
+    public Cliente getCliente(int id) {
+        Cliente cliente = new Cliente();
+        con = new Conexao().getConnection();
+        
+        String s = null;
+        PreparedStatement stmt;
+        try {
+            stmt = con.prepareStatement("select * from clientes where id = ?");
+            
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+           
+            cliente.setNomeRazao(rs.getString("nome"));
+            cliente.setEndereco(rs.getString("endereco"));
+            cliente.setNum(rs.getInt("numero"));
+            cliente.setUF(rs.getString("uf"));
+            cliente.setCpfCNPJ(rs.getString("cpfCNPJ"));
+            cliente.setTelefone(rs.getString("telefone"));
+            cliente.setEmail(rs.getString("email"));
 
-    //
+            stmt.close();
+            con.close();
+            
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+        
+        return cliente;        
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public ArrayList<Cliente> getClientes() {
+        ArrayList<Cliente> listClientes = new ArrayList<Cliente>();
+        con = new Conexao().getConnection();
+        
+        String s = null;
+        PreparedStatement stmt;
+        try {
+            stmt = con.prepareStatement("select * from clientes");
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Cliente cliente = new Cliente();
+                cliente.setNomeRazao(rs.getString("nome"));
+                cliente.setEndereco(rs.getString("endereco"));
+                cliente.setNum(rs.getInt("numero"));
+                cliente.setUF(rs.getString("uf"));
+                cliente.setCpfCNPJ(rs.getString("cpfCNPJ"));
+                cliente.setTelefone(rs.getString("telefone"));
+                cliente.setEmail(rs.getString("email"));
+                listClientes.add(cliente);
+            }            
+            stmt.close();
+            con.close();
+            
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+        
+        return listClientes;
+    }
 
 }

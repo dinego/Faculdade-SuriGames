@@ -13,6 +13,13 @@ import DAO.ClienteDAO;
  */
 public class Cliente {
     
+    //SE ADICIONAR OU RETIRAR ALGUM ATRIBUTO, ALTERAR A VARIAVEL DE COUNT_COLUMMS
+    private static final int COUNT_COLUMMS = 7;
+
+    public static int getCOUNT_COLUMMS() {
+        return COUNT_COLUMMS;
+    }
+    
     private String nomeRazao;
     private String endereco;
     private int num;
@@ -20,7 +27,7 @@ public class Cliente {
     private String cpfCNPJ;
     private String telefone;
     private String email;
-
+    
     public String getNomeRazao() {
         return nomeRazao;
     }
