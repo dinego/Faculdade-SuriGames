@@ -29,17 +29,18 @@ public class AddJogos extends javax.swing.JInternalFrame {
 
         lblNomeJogo = new javax.swing.JLabel();
         nomeJogo = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        lblGenero = new javax.swing.JLabel();
         genero = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        lblDistribuidora = new javax.swing.JLabel();
         distribuidora = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        lblValor = new javax.swing.JLabel();
         valor = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        lblQtde = new javax.swing.JLabel();
         qtde = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        lblFornecedor = new javax.swing.JLabel();
         fornecedor = new javax.swing.JTextField();
-        cadastrarJogo = new javax.swing.JToggleButton();
+        btnCadastrar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
 
         setClosable(true);
         setMaximizable(true);
@@ -48,13 +49,13 @@ public class AddJogos extends javax.swing.JInternalFrame {
 
         lblNomeJogo.setText("Nome do Jogo");
 
-        jLabel1.setText("Gênero");
+        lblGenero.setText("Gênero");
 
-        jLabel2.setText("Distribuidora");
+        lblDistribuidora.setText("Distribuidora");
 
-        jLabel3.setText("Valor em R$");
+        lblValor.setText("Valor em R$");
 
-        jLabel4.setText("Quantidade em Estoque");
+        lblQtde.setText("Quantidade em Estoque");
 
         qtde.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,7 +63,7 @@ public class AddJogos extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel5.setText("Fornecedor");
+        lblFornecedor.setText("Fornecedor");
 
         fornecedor.setEditable(false);
         fornecedor.setText("Fulano");
@@ -72,38 +73,39 @@ public class AddJogos extends javax.swing.JInternalFrame {
             }
         });
 
-        cadastrarJogo.setBackground(new java.awt.Color(102, 204, 0));
-        cadastrarJogo.setText("Cadastrar");
+        btnCadastrar.setText("Cadastrar");
+
+        btnCancelar.setText("Cancelar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblNomeJogo)
-                    .addComponent(jLabel2)
+                    .addComponent(lblDistribuidora)
                     .addComponent(nomeJogo, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                     .addComponent(distribuidora))
-                .addGap(18, 54, Short.MAX_VALUE)
+                .addGap(18, 37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3)
+                    .addComponent(lblGenero)
+                    .addComponent(lblValor)
                     .addComponent(valor, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                    .addComponent(genero))
-                .addGap(56, 56, 56)
+                    .addComponent(genero, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnCadastrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCancelar))
+                    .addComponent(lblQtde)
                     .addComponent(qtde, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(fornecedor, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(9, 27, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cadastrarJogo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                        .addComponent(lblFornecedor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,32 +115,34 @@ public class AddJogos extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNomeJogo)
-                            .addComponent(jLabel1))
+                            .addComponent(lblGenero))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nomeJogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(genero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
+                        .addComponent(lblQtde)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(qtde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
+                            .addComponent(lblDistribuidora)
+                            .addComponent(lblValor))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(distribuidora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(valor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
+                        .addComponent(lblFornecedor)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
-                .addComponent(cadastrarJogo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCadastrar)
+                    .addComponent(btnCancelar))
+                .addGap(24, 24, 24))
         );
 
         pack();
@@ -154,16 +158,17 @@ public class AddJogos extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton cadastrarJogo;
+    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JTextField distribuidora;
     private javax.swing.JTextField fornecedor;
     private javax.swing.JTextField genero;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel lblDistribuidora;
+    private javax.swing.JLabel lblFornecedor;
+    private javax.swing.JLabel lblGenero;
     private javax.swing.JLabel lblNomeJogo;
+    private javax.swing.JLabel lblQtde;
+    private javax.swing.JLabel lblValor;
     private javax.swing.JTextField nomeJogo;
     private javax.swing.JTextField qtde;
     private javax.swing.JTextField valor;
