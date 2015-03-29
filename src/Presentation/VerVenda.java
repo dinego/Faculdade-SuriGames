@@ -49,11 +49,19 @@ public class VerVenda extends javax.swing.JInternalFrame {
 
         lblCliente.setText("Cliente");
 
+        idCliente.setEditable(false);
+
         lblJogos.setText("Jogo(s) Adquirido(s)");
+
+        idJogo.setEditable(false);
 
         lblQdeVenda.setText("Quantidade");
 
+        qtdeVenda.setEditable(false);
+
         lblValorVenda.setText("Valor Total da Venda");
+
+        valorVenda.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
