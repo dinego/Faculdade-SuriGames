@@ -44,8 +44,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <Component id="qtde" min="-2" pref="51" max="-2" attributes="0"/>
-                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                  <Component id="fornecedor" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="fornecedor" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace min="9" pref="27" max="32767" attributes="0"/>
           </Group>
@@ -97,7 +99,7 @@
                       <Component id="fornecedor" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="200" max="32767" attributes="0"/>
+              <EmptySpace pref="204" max="32767" attributes="0"/>
               <Component id="cadastrarJogo" min="-2" pref="38" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
           </Group>
