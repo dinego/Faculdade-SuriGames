@@ -8,13 +8,13 @@ package surigamesdao;
 import Presentation.AddClientes;
 import Presentation.ListClientes;
 import Presentation.AddFornecedores;
-import Presentation.ListarFornecedores;
+import Presentation.ListJogos;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JInternalFrame;
 import Presentation.AddJogos;
-import Presentation.ListarJogos;
+import Presentation.ListJogos;
 
 /**
  *
@@ -179,7 +179,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnListarClientesActionPerformed
 
     private void BtnListarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnListarFornecedorActionPerformed
-        ListarFornecedores listarFornecedores = new ListarFornecedores();
+        ListJogos listarFornecedores = new ListJogos();
         PanelPrincipal.add(listarFornecedores);
         listarFornecedores.setVisible(true);
         setMaximumSize(listarFornecedores);
@@ -193,7 +193,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnAddJogoActionPerformed
 
     private void BtnListarJogosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnListarJogosActionPerformed
-        ListarJogos listarJogos = new ListarJogos();
+        ListJogos listarJogos = new ListJogos();
         PanelPrincipal.add(listarJogos);
         listarJogos.setVisible(true);
         setMaximumSize(listarJogos);
