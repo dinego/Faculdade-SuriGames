@@ -9,12 +9,12 @@ package Presentation;
  *
  * @author Diego
  */
-public class ListarJogosVendidos extends javax.swing.JInternalFrame {
+public class ListarFornecedores extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form ListarJogosVendidos
+     * Creates new form ListarFornecedores
      */
-    public ListarJogosVendidos() {
+    public ListarFornecedores() {
         initComponents();
     }
 
@@ -31,11 +31,11 @@ public class ListarJogosVendidos extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 616, Short.MAX_VALUE)
+            .addGap(0, 604, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 342, Short.MAX_VALUE)
+            .addGap(0, 333, Short.MAX_VALUE)
         );
 
         pack();
