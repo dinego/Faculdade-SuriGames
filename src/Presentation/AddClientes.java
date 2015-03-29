@@ -74,7 +74,7 @@ public class AddClientes extends javax.swing.JInternalFrame {
 
         lblUF.setText("UF:");
 
-        cadastrarCliente.setText("Cadastrar Fornecedor");
+        cadastrarCliente.setText("Cadastrar Cliente");
         cadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastrarClienteActionPerformed(evt);
