@@ -2,6 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Diego%20Moreira/Documents/GitHub/SuriGames/src/Entity/Jogo.java</file>
+            <file>file:/C:/Users/Diego%20Moreira/Documents/GitHub/SuriGames/src/Presentation/AddJogos.java</file>
+            <file>file:/C:/Users/Diego%20Moreira/Documents/GitHub/SuriGames/src/Presentation/ListVendas.java</file>
+            <file>file:/C:/Users/Diego%20Moreira/Documents/GitHub/SuriGames/src/DAO/JogosDAO.java</file>
+            <file>file:/C:/Users/Diego%20Moreira/Documents/GitHub/SuriGames/src/DAO/Conexao.java</file>
+            <file>file:/C:/Users/Diego%20Moreira/Documents/GitHub/SuriGames/src/Presentation/AddClientes.java</file>
+            <file>file:/C:/Users/Diego%20Moreira/Documents/GitHub/SuriGames/src/surigamesdao/MenuPrincipal.java</file>
+            <file>file:/C:/Users/Diego%20Moreira/Documents/GitHub/SuriGames/src/Presentation/ListClientes.java</file>
+            <file>file:/C:/Users/Diego%20Moreira/Documents/GitHub/SuriGames/src/Entity/Venda.java</file>
+            <file>file:/C:/Users/Diego%20Moreira/Documents/GitHub/SuriGames/src/DAO/ClienteDAO.java</file>
+            <file>file:/C:/Users/Diego%20Moreira/Documents/GitHub/SuriGames/src/DAO/VendasDAO.java</file>
+        </group>
     </open-files>
 </project-private>

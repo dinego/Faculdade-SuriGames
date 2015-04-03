@@ -4,6 +4,29 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
+        <Menu class="javax.swing.JMenu" name="MenuFornecedores">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Vendas"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="BtnAddVenda">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fazer Nova Venda"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnAddVendaActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="BtnListarVenda">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listar Vendas"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnListarVendaActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
         <Menu class="javax.swing.JMenu" name="MenuClientes">
           <Properties>
             <Property name="text" type="java.lang.String" value="Clientes"/>
@@ -26,29 +49,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnListarClientesActionPerformed"/>
-              </Events>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="MenuFornecedores">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Fornecedores"/>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="BtnAddFornecedor">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Adicionar Fornecedor"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnAddFornecedorActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="BtnListarFornecedor">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Listar Fornecedores"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnListarFornecedorActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

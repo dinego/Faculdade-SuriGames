@@ -5,6 +5,10 @@
  */
 package Presentation;
 
+import Entity.Venda;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author fpereira
@@ -17,6 +21,60 @@ public class AddVendas extends javax.swing.JInternalFrame {
     public AddVendas() {
         initComponents();
     }
+    
+    public void validaCamposPreenchidos() {  
+       int j;
+       if (nomeCliente.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo Nome do Cliente", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               nomeCliente.setBackground(Color.RED);  
+               //jTabbedPane1.setSelectedIndex(1);  
+               nomeCliente.requestFocus();
+           }
+       } else if (idJogo.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Código do jogo", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               idJogo.setBackground(Color.RED);  
+               //jTabbedPane1.setSelectedIndex(1);  
+               idJogo.requestFocus();
+           }
+       } else if (qtdeVenda.getText().length() <= 0) {  
+           Object[] options = {"OK"};  
+           j = JOptionPane.showOptionDialog(null, "Informe o Campo Quantidade", "Erro de validação",  
+                   JOptionPane.ERROR_MESSAGE, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+           if (j == JOptionPane.ERROR_MESSAGE) {  
+               qtdeVenda.setBackground(Color.RED);  
+               //jTabbedPane1.setSelectedIndex(1);  
+               qtdeVenda.requestFocus();
+           }
+       } else {  
+            cadastraCampos();
+       }
+    }
+    
+    private void cadastraCampos() {
+       //criando objeto cliente
+        Venda venda  = new Venda();
+        
+        //pegando valores dos inputs e atribuindo ao objeto cliente
+        int addCodCliente = Integer.parseInt(idCliente.getText());
+        venda.setIdCliente(addCodCliente);
+        
+        int addCodJogo = Integer.parseInt(idJogo.getText());
+        venda.setIdProd(addCodJogo);
+
+        int addQtde = Integer.parseInt(qtdeVenda.getText());
+        venda.setQtdProduto(addQtde);
+
+        float addValor = Float.parseFloat(valorVenda.getText());
+        venda.setValorVenda(addValor);
+        
+        venda.InserirDados(venda);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,10 +85,8 @@ public class AddVendas extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblNroVenda = new javax.swing.JLabel();
-        id = new javax.swing.JTextField();
         lblCliente = new javax.swing.JLabel();
-        idCliente = new javax.swing.JTextField();
+        nomeCliente = new javax.swing.JTextField();
         lblJogos = new javax.swing.JLabel();
         idJogo = new javax.swing.JTextField();
         lblQdeVenda = new javax.swing.JLabel();
@@ -39,6 +95,8 @@ public class AddVendas extends javax.swing.JInternalFrame {
         valorVenda = new javax.swing.JTextField();
         btnComprar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        lblCodCliente = new javax.swing.JLabel();
+        idCliente = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -46,20 +104,11 @@ public class AddVendas extends javax.swing.JInternalFrame {
         setTitle("Adicionar nova Venda");
         setToolTipText("");
 
-        lblNroVenda.setText("Código da Venda");
-
-        id.setEditable(false);
-        id.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idActionPerformed(evt);
-            }
-        });
-
         lblCliente.setText("Cliente");
 
-        lblJogos.setText("Jogo(s) Adquirido(s)");
+        lblJogos.setText("Código do jogo vendido");
 
-        idJogo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        idJogo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         idJogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idJogoActionPerformed(evt);
@@ -70,7 +119,7 @@ public class AddVendas extends javax.swing.JInternalFrame {
 
         lblValorVenda.setText("Valor total da Venda");
 
-        btnComprar.setText("Comprar");
+        btnComprar.setText("Fazer Venda");
         btnComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnComprarActionPerformed(evt);
@@ -79,6 +128,8 @@ public class AddVendas extends javax.swing.JInternalFrame {
 
         btnCancelar.setText("Cancelar");
 
+        lblCodCliente.setText("Código do Cliente");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,46 +137,47 @@ public class AddVendas extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(idJogo)
+                            .addComponent(lblJogos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(146, 146, 146)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(qtdeVenda, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblQdeVenda)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(26, 26, 26))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(valorVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnComprar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnCancelar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCliente)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(id, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblNroVenda, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblValorVenda)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblValorVenda)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(idJogo, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(qtdeVenda, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(lblJogos)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblQdeVenda))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(valorVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnComprar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnCancelar))
-                            .addComponent(idCliente, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(67, 67, 67))))
+                                .addComponent(lblCliente)
+                                .addGap(226, 226, 226)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(idCliente)
+                                    .addComponent(lblCodCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(nomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 15, Short.MAX_VALUE)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblNroVenda)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCliente)
+                    .addComponent(lblCodCliente))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblCliente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(idCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblJogos)
@@ -134,22 +186,18 @@ public class AddVendas extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(idJogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(qtdeVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                 .addComponent(lblValorVenda)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnComprar)
                     .addComponent(btnCancelar)
                     .addComponent(valorVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32))
+                .addGap(21, 21, 21))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idActionPerformed
 
     private void idJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idJogoActionPerformed
         // TODO add your handling code here:
@@ -163,14 +211,14 @@ public class AddVendas extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnComprar;
-    private javax.swing.JTextField id;
     private javax.swing.JTextField idCliente;
     private javax.swing.JTextField idJogo;
     private javax.swing.JLabel lblCliente;
+    private javax.swing.JLabel lblCodCliente;
     private javax.swing.JLabel lblJogos;
-    private javax.swing.JLabel lblNroVenda;
     private javax.swing.JLabel lblQdeVenda;
     private javax.swing.JLabel lblValorVenda;
+    private javax.swing.JTextField nomeCliente;
     private javax.swing.JTextField qtdeVenda;
     private javax.swing.JTextField valorVenda;
     // End of variables declaration//GEN-END:variables

@@ -9,12 +9,12 @@ package Presentation;
  *
  * @author Diego
  */
-public class ListarJogos extends javax.swing.JInternalFrame {
+public class ListJogos extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ListarJogos
      */
-    public ListarJogos() {
+    public ListJogos() {
         initComponents();
     }
 

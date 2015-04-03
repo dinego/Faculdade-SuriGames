@@ -7,14 +7,14 @@ package surigamesdao;
 
 import Presentation.AddClientes;
 import Presentation.ListClientes;
-import Presentation.AddFornecedores;
-import Presentation.ListarFornecedores;
+import Presentation.ListVendas;
+import Presentation.AddVendas;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JInternalFrame;
 import Presentation.AddJogos;
-import Presentation.ListarJogos;
+import Presentation.ListJogos;
 
 /**
  *
@@ -48,12 +48,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         PanelPrincipal = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
+        MenuFornecedores = new javax.swing.JMenu();
+        BtnAddVenda = new javax.swing.JMenuItem();
+        BtnListarVenda = new javax.swing.JMenuItem();
         MenuClientes = new javax.swing.JMenu();
         BtnAddClientes = new javax.swing.JMenuItem();
         BtnListarClientes = new javax.swing.JMenuItem();
-        MenuFornecedores = new javax.swing.JMenu();
-        BtnAddFornecedor = new javax.swing.JMenuItem();
-        BtnListarFornecedor = new javax.swing.JMenuItem();
         MenuJogos = new javax.swing.JMenu();
         BtnAddJogo = new javax.swing.JMenuItem();
         BtnListarJogos = new javax.swing.JMenuItem();
@@ -72,6 +72,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 553, Short.MAX_VALUE)
         );
+
+        MenuFornecedores.setText("Vendas");
+
+        BtnAddVenda.setText("Fazer Nova Venda");
+        BtnAddVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAddVendaActionPerformed(evt);
+            }
+        });
+        MenuFornecedores.add(BtnAddVenda);
+
+        BtnListarVenda.setText("Listar Vendas");
+        BtnListarVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnListarVendaActionPerformed(evt);
+            }
+        });
+        MenuFornecedores.add(BtnListarVenda);
+
+        jMenuBar1.add(MenuFornecedores);
 
         MenuClientes.setText("Clientes");
 
@@ -93,26 +113,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         MenuClientes.add(BtnListarClientes);
 
         jMenuBar1.add(MenuClientes);
-
-        MenuFornecedores.setText("Fornecedores");
-
-        BtnAddFornecedor.setText("Adicionar Fornecedor");
-        BtnAddFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnAddFornecedorActionPerformed(evt);
-            }
-        });
-        MenuFornecedores.add(BtnAddFornecedor);
-
-        BtnListarFornecedor.setText("Listar Fornecedores");
-        BtnListarFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnListarFornecedorActionPerformed(evt);
-            }
-        });
-        MenuFornecedores.add(BtnListarFornecedor);
-
-        jMenuBar1.add(MenuFornecedores);
 
         MenuJogos.setText("Jogos");
 
@@ -158,17 +158,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnAddFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAddFornecedorActionPerformed
-        AddFornecedores addFornecedores = new AddFornecedores();
+    private void BtnAddVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAddVendaActionPerformed
+        AddVendas addFornecedores = new AddVendas();
         PanelPrincipal.add(addFornecedores);
         addFornecedores.setVisible(true);
-    }//GEN-LAST:event_BtnAddFornecedorActionPerformed
+    }//GEN-LAST:event_BtnAddVendaActionPerformed
 
     private void BtnAddClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAddClientesActionPerformed
         AddClientes addClientes = new AddClientes();
         PanelPrincipal.add(addClientes);
         addClientes.setVisible(true);
-        setMaximumSize(addClientes);
+        //setMaximumSize(addClientes);
     }//GEN-LAST:event_BtnAddClientesActionPerformed
 
     private void BtnListarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnListarClientesActionPerformed
@@ -178,29 +178,32 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setMaximumSize(listarClientes);
     }//GEN-LAST:event_BtnListarClientesActionPerformed
 
-    private void BtnListarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnListarFornecedorActionPerformed
-        ListarFornecedores listarFornecedores = new ListarFornecedores();
-        PanelPrincipal.add(listarFornecedores);
-        listarFornecedores.setVisible(true);
-        setMaximumSize(listarFornecedores);
-    }//GEN-LAST:event_BtnListarFornecedorActionPerformed
+    private void BtnListarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnListarVendaActionPerformed
+        ListVendas listarVendas = new ListVendas();
+        PanelPrincipal.add(listarVendas);
+        listarVendas.setVisible(true);
+        setMaximumSize(listarVendas);
+    }//GEN-LAST:event_BtnListarVendaActionPerformed
 
     private void BtnAddJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAddJogoActionPerformed
         AddJogos addJogos = new AddJogos();
         PanelPrincipal.add(addJogos);
         addJogos.setVisible(true);
-        setMaximumSize(addJogos);
+        //setMaximumSize(addJogos);
     }//GEN-LAST:event_BtnAddJogoActionPerformed
 
     private void BtnListarJogosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnListarJogosActionPerformed
-        ListarJogos listarJogos = new ListarJogos();
+        ListJogos listarJogos = new ListJogos();
         PanelPrincipal.add(listarJogos);
         listarJogos.setVisible(true);
         setMaximumSize(listarJogos);
     }//GEN-LAST:event_BtnListarJogosActionPerformed
 
     private void BtnListarJogosVendidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnListarJogosVendidosActionPerformed
-        // TODO add your handling code here:
+        ListVendas listarVendas = new ListVendas();
+        PanelPrincipal.add(listarVendas);
+        listarVendas.setVisible(true);
+        setMaximumSize(listarVendas);
     }//GEN-LAST:event_BtnListarJogosVendidosActionPerformed
 
     /**
@@ -247,12 +250,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem BtnAddClientes;
-    private javax.swing.JMenuItem BtnAddFornecedor;
     private javax.swing.JMenuItem BtnAddJogo;
+    private javax.swing.JMenuItem BtnAddVenda;
     private javax.swing.JMenuItem BtnListarClientes;
-    private javax.swing.JMenuItem BtnListarFornecedor;
     private javax.swing.JMenuItem BtnListarJogos;
     private javax.swing.JMenuItem BtnListarJogosVendidos;
+    private javax.swing.JMenuItem BtnListarVenda;
     private javax.swing.JMenu MenuClientes;
     private javax.swing.JMenu MenuFornecedores;
     private javax.swing.JMenu MenuJogos;

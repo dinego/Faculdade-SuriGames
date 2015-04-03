@@ -6,7 +6,6 @@
 package Presentation;
 
 import Entity.Cliente;
-import Entity.Cliente;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
@@ -259,7 +258,7 @@ public class AddClientes extends javax.swing.JInternalFrame {
            }
        } else {  
             cadastraCampos();
-       }  
+       }
     }
     /**
      * @param args the command line arguments
